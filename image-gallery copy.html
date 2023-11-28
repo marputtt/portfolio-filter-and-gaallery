@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image gallery</title>
+    <link href="image-gallery.css" rel="stylesheet" />
+</head>
+<style>
+    .navigation-links-nav {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .navigation-links-navlink {
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .navigation-links-navlink1 {
+    margin-left: var(--dl-space-space-twounits);
+    text-decoration: none;
+  }
+  .navigation-links-text {
+    margin-left: var(--dl-space-space-twounits);
+  }
+  .navigation-links-text1 {
+    margin-left: var(--dl-space-space-twounits);
+  }
+  .navigation-links-text2 {
+    margin-left: var(--dl-space-space-twounits);
+  }
+  
+</style>
+<body>
+    <nav class="home-nav">
+        <nav class="navigation-links-nav navigation-links-root-class-name19">
+          <a href="index.html" class="navigation-links-navlink">
+            <span>Home  </span>
+          </a>
+          <a href="image-gallery.html" class="navigation-links-navlink">
+            <span>Image Gallery  </span>
+          </a>
+          <a href="price-calc.html" class="navigation-links-navlink">
+          <span class="navigation-links-text"><span>Calculator  </span></span>
+        </a>
+        <a href="dropdown.html" class="navigation-links-navlink">
+          <span class="navigation-links-text1"><span>dropdown  </span></span> </a>
+          <a href="zoom.html" class="navigation-links-navlink">
+          <span class="navigation-links-text2"><span>Zoom image  </span></span></a>
+        </nav>
+      </nav>
+    <div class="image-gallery-container">
+        <div class="image-gallery-container1">
+          <h1 class="image-gallery-text">FILTER GALLERY</h1>
+          <p class="image-gallery-text1">
+            <span>Filter by</span>
+            <br/>
+          </p>
+          <div class="filter-container">
+            <button class="reset-filter">Show All</button>
+            <button class="filter-button" data-filter="animal">Animal</button>
+            <button class="filter-button" data-filter="city">City</button>
+            <button class="filter-button" data-filter="nature">Nature</button>
+           </div>
+           
+          <div class="image-gallery-gallery-container" >
+           
+            <div class="gallery-item animal" data-category="animal">
+                
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/Animal1.jpg"
+              alt="image"
+              class="image-gallery-image"/>
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/Animal2.jpg"
+              alt="image"
+              class="image-gallery-image01"/>
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/Animal3.jpg"
+              alt="image"
+              class="image-gallery-image02"/>
+         
+        
+        </div>
+    
+
+        <div class="gallery-item city" data-category="city"> 
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/City1.jpg"
+              alt="image"
+              class="image-gallery-image06"
+            />
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/City2.jpg"
+              alt="image"
+              class="image-gallery-image07"
+            />
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/City3.jpg"
+              alt="image"
+              class="image-gallery-image08"
+            />
+            
+        </div>
+        <div class="gallery-item nature" data-category="nature">
+
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/Nature 1.jpg"
+              alt="image"
+              class="image-gallery-image11"
+            />
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/Nature2.jpg"
+              alt="image"
+              class="image-gallery-image12"
+            />
+            <img
+              src="../HCI-ASSIGN 6/Image gallery/Nature3.jpg"
+              alt="image"
+              class="image-gallery-image13"
+            />
+    
+          </div>
+        
+        </div>
+      </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+    $('.filter-button').click(function() {
+      var filterValue = $(this).attr('data-filter');
+      $('.gallery-item').each(function() {
+        if ($(this).attr('data-category') == filterValue) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+ });
+ $(document).ready(function() {
+    $('.reset-filter').click(function() {
+      $('.gallery-item').each(function() {
+        $(this).show();
+      });
+    });
+ });
+</script>
+</html>
